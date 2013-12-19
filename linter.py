@@ -17,7 +17,7 @@ class Phpcs(Linter):
 
     """Provides an interface to phpcs."""
 
-    syntax = ('php', 'html')
+    syntax = ('php', 'html', 'html 5')
     regex = (
         r'.*line="(?P<line>\d+)" '
         r'column="(?P<col>\d+)" '
