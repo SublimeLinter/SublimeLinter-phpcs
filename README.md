@@ -11,9 +11,9 @@ Before using this plugin, you must ensure that `phpcs` is installed on your syst
 
 1. Install [php](http://php.net).
 
-1. Install [pear](http://pear.php.net).
+2. Install [pear](http://pear.php.net).
 
-1. Install `phpcs` by typing the following in a terminal:
+3. Install `phpcs` by typing the following in a terminal:
    ```
    pear install PHP_CodeSniffer
    ```
