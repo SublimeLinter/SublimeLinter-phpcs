@@ -20,7 +20,7 @@ class Phpcs(Linter):
     syntax = ('php', 'html')
     regex = (
         r'.*line="(?P<line>\d+)" '
-        r'column="(?P<column>\d+)" '
+        r'column="(?P<col>\d+)" '
         r'severity="(?:(?P<error>error)|(?P<warning>warning))" '
         r'message="(?P<message>.*)" source'
     )
