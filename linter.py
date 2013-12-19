@@ -25,9 +25,6 @@ class Phpcs(Linter):
         r'message="(?P<message>.*)" source'
     )
     executable = 'phpcs'
-    selectors = {
-        'html': 'source.php.embedded.block.html'
-    }
     cmd = 'phpcs --report=checkstyle'
     defaults = {
         '--standard=': 'PSR2',
