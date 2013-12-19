@@ -9,9 +9,9 @@ SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 
 ### Linter installation
 Before using this plugin, you must ensure that `phpcs` is installed on your system. To install `phpcs`, do the following:
 
-1. Install php.
+1. Install [php](http://php.net).
 
-1. Install pear.
+1. Install [pear](http://pear.php.net).
 
 1. Install `phpcs` by typing the following in a terminal:
    ```
