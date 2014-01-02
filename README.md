@@ -4,7 +4,7 @@ SublimeLinter-phpcs
 This linter plugin for [SublimeLinter](http://sublimelinter.readthedocs.org/) provides an interface to [phpcs](http://pear.php.net/package/PHP_CodeSniffer/). It will be used with files that have the “php”, “html” and “html5” syntax.
 
 ## Installation
-SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here](https://github.com/SublimeLinter/SublimeLinter.github.io/wiki/Installation).
+SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here](http://sublimelinter.readthedocs.org/en/latest/installation.html).
 
 ### Linter installation
 Before using this plugin, you must ensure that `phpcs` is installed on your system. To install `phpcs`, do the following:
