@@ -1,7 +1,7 @@
 SublimeLinter-phpcs
 =========================
 
-[![Build Status](https://khancdn.eu/badges.php?service=https%3A%2F%2Ftravis-ci.org%2FSublimeLinter%2FSublimeLinter-phpcs.png%3Fbranch%3Dmaster)](https://travis-ci.org/SublimeLinter/SublimeLinter-phpcs)
+[![Build Status](https://travis-ci.org/SublimeLinter/SublimeLinter-phpcs.svg?branch=master)](https://travis-ci.org/SublimeLinter/SublimeLinter-phpcs)
 
 This linter plugin for [SublimeLinter](http://sublimelinter.readthedocs.org/) provides an interface to [phpcs](http://pear.php.net/package/PHP_CodeSniffer/). It will be used with files that have the “PHP”, “HTML” and “HTML5” syntax.
 
