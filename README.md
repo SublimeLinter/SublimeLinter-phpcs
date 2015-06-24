@@ -9,18 +9,7 @@ This linter plugin for [SublimeLinter](http://sublimelinter.readthedocs.org/) pr
 SublimeLinter 3 must be installed in order to use this plugin. If SublimeLinter 3 is not installed, please follow the instructions [here](http://sublimelinter.readthedocs.org/en/latest/installation.html).
 
 ### Linter installation
-Before using this plugin, you must ensure that `phpcs` is installed on your system. To install `phpcs`, do the following:
-
-1. Install [php](http://php.net).
-
-2. Install [pear](http://pear.php.net).
-
-3. Install `phpcs` by typing the following in a terminal:
-   ```
-   pear install PHP_CodeSniffer
-   ```
-
-Once phpcs is installed, you can proceed to install the SublimeLinter-phpcs plugin if it is not yet installed.
+Before using this plugin, you must ensure that `phpcs` is installed on your system, preferably somewhere in your PATH. To install `phpcs`, follow the instructions on https://github.com/squizlabs/PHP_CodeSniffer#installation. Once `phpcs` is installed, you can proceed installing the `SublimeLinter-phpcs` plugin if you did not already do this (the order does not matter).
 
 ### Plugin installation
 Please use [Package Control](https://sublime.wbond.net/installation) to install the linter plugin. This will ensure that the plugin will be updated when new versions are available. If you want to install from source so you can modify the source code, you probably know what you are doing so we won’t cover that here.
