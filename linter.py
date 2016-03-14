@@ -14,7 +14,6 @@ from SublimeLinter.lint import Linter
 
 
 class Phpcs(Linter):
-
     """Provides an interface to phpcs."""
 
     syntax = ('php', 'html', 'html 5')
