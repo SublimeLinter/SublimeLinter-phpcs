@@ -23,6 +23,22 @@ To install via Package Control, do the following:
 ## Settings
 For general information on how SublimeLinter works with settings, please see [Settings](http://sublimelinter.readthedocs.org/en/latest/settings.html). For information on generic linter settings, please see [Linter Settings](http://sublimelinter.readthedocs.org/en/latest/linter_settings.html).
 
+### Project Specific Executable
+It is possible to specify the `phpcs` executable that should be used to lint your code on a per-project level.
+
+**Example:**
+```json
+{
+    "SublimeLinter": {
+        "linters": {
+            "phpcs": {
+                "cmd": "${project}/vendor/bin/phpcs"
+            }
+        }
+    }
+}
+```
+
 ## Contributing
 If you would like to contribute enhancements or fixes, please do the following:
 

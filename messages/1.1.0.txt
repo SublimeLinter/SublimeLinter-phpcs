@@ -1,0 +1,15 @@
+SublimeLinter-phpcs 1.1.0
+---------------------------
+
+This version adds support for declaring per-project linter executable files.
+
+Example (*.sublime-project):
+{
+    "SublimeLinter": {
+        "linters": {
+            "phpcs": {
+                "cmd": "${project}/vendor/bin/phpcs"
+            }
+        }
+    }
+}

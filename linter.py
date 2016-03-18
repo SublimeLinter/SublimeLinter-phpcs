@@ -24,9 +24,21 @@ class Phpcs(Linter):
         r'message="(?P<message>.*)" source'
     )
     executable = 'phpcs'
-    cmd = 'phpcs --report=checkstyle'
     defaults = {
         '--standard=': 'PSR2',
     }
     inline_overrides = ('standard')
     tempfile_suffix = 'php'
+
+    def cmd(self):
+        """Read cmd from inline settings."""
+        settings = Linter.get_view_settings(self)
+
+        if 'cmd' in settings:
+            command = [settings.get('cmd')]
+        else:
+            command = [self.executable_path]
+
+        command.append('--report=checkstyle')
+
+        return command
