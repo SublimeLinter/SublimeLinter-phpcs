@@ -39,6 +39,21 @@ It is possible to specify the `phpcs` executable that should be used to lint you
 }
 ```
 
+### Per-project Standards
+You can set up your project settings to use a specific standard using the following: 
+
+```json
+{
+    "SublimeLinter": {
+        "linters": {
+            "phpcs": {
+                "standard": "${project}/phpcs.xml"
+            }
+        }
+    }
+}
+```
+
 ## Contributing
 If you would like to contribute enhancements or fixes, please do the following:
 
