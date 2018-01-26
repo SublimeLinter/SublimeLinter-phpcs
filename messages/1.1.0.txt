@@ -8,7 +8,7 @@ Example (*.sublime-project):
     "SublimeLinter": {
         "linters": {
             "phpcs": {
-                "cmd": "${project}/vendor/bin/phpcs"
+                "cmd": "${folder}/vendor/bin/phpcs"
             }
         }
     }

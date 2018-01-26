@@ -25,7 +25,7 @@ It is possible to specify the `phpcs` executable that should be used to lint you
     "SublimeLinter": {
         "linters": {
             "phpcs": {
-                "cmd": "${project}/vendor/bin/phpcs"
+                "cmd": "${folder}/vendor/bin/phpcs"
             }
         }
     }
@@ -40,7 +40,7 @@ You can set up your project settings to use a specific standard using the follow
     "SublimeLinter": {
         "linters": {
             "phpcs": {
-                "standard": "${project}/phpcs.xml"
+                "standard": "${folder}/phpcs.xml"
             }
         }
     }
