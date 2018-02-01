@@ -10,7 +10,7 @@
 
 """This module exports the Phpcs plugin class."""
 
-from SublimeLinter.lint import Linter
+from SublimeLinter.lint import Linter, util
 
 
 class Phpcs(Linter):
@@ -29,6 +29,7 @@ class Phpcs(Linter):
     }
     inline_overrides = ('standard')
     tempfile_suffix = 'php'
+    error_stream = util.STREAM_STDOUT
 
     def cmd(self):
         """Read cmd from inline settings."""
