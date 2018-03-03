@@ -23,7 +23,6 @@ class Phpcs(Linter):
         r'severity="(?:(?P<error>error)|(?P<warning>warning))" '
         r'message="(?P<message>.*)" source'
     )
-    executable = 'phpcs'
     defaults = {
         '--standard=': 'PSR2',
     }
@@ -37,7 +36,7 @@ class Phpcs(Linter):
         if 'cmd' in settings:
             command = [settings.get('cmd')]
         else:
-            command = [self.executable_path]
+            command = ['phpcs']
 
         command.append('--report=checkstyle')
 
