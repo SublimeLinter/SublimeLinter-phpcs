@@ -1,0 +1,7 @@
+SublimeLinter-phpcs 2.0.0
+-------------------------
+
+Yeah, we're linting via STDIN! 
+
+The setting `cmd` has been renamed to `executable` which is the standard name
+all linters now use.
