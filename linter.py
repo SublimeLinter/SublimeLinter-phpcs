@@ -17,13 +17,8 @@ class Phpcs(Linter):
     """Provides an interface to phpcs."""
 
     syntax = ('php', 'html', 'html 5')
-    cmd = ('phpcs', '--report=checkstyle', '${args}', '-')
-    regex = (
-        r'.*line="(?P<line>\d+)" '
-        r'column="(?P<col>\d+)" '
-        r'severity="(?:(?P<error>error)|(?P<warning>warning))" '
-        r'message="(?P<message>.*)" source'
-    )
+    cmd = ('phpcs', '--report=emacs', '${args}', '-')
+    regex = r'^.*:(?P<line>[0-9]+):(?P<col>[0-9]+): (?:(?P<error>error)|(?P<warning>warning)) - (?P<message>.+)'
     defaults = {
         # we want auto-substitution of the filename, but `cmd` does not support that yet
         '--stdin-path=': '${file}',
