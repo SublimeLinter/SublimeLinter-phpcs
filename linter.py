@@ -17,7 +17,7 @@ class Phpcs(Linter):
     """Provides an interface to phpcs."""
 
     syntax = ('php', 'html', 'html 5')
-    cmd = ('phpcs', '--report=checkstyle', '-')
+    cmd = ('phpcs', '--report=checkstyle', '${args}', '-')
     regex = (
         r'.*line="(?P<line>\d+)" '
         r'column="(?P<col>\d+)" '
