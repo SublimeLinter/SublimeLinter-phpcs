@@ -8,14 +8,10 @@
 # License: MIT
 #
 
-"""This module exports the Phpcs plugin class."""
-
 from SublimeLinter.lint import Linter
 
 
 class Phpcs(Linter):
-    """Provides an interface to phpcs."""
-
     syntax = ('php', 'html', 'html 5')
     cmd = ('phpcs', '--report=checkstyle', '${args}', '-')
     regex = (
