@@ -20,7 +20,4 @@ class Phpcs(Linter):
         '--stdin-path=': '${file}',
         '--standard=': 'PSR2',
     }
-
-    inline_overrides = ('standard')
-    tempfile_suffix = 'php'
     error_stream = util.STREAM_STDOUT
