@@ -8,7 +8,7 @@
 # License: MIT
 #
 
-from SublimeLinter.lint import Linter
+from SublimeLinter.lint import Linter, util
 
 
 class Phpcs(Linter):
@@ -20,3 +20,4 @@ class Phpcs(Linter):
         '--stdin-path=': '${file}',
         '--standard=': 'PSR2',
     }
+    error_stream = util.STREAM_STDOUT
