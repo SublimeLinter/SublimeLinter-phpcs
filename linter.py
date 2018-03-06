@@ -8,38 +8,19 @@
 # License: MIT
 #
 
-"""This module exports the Phpcs plugin class."""
-
 from SublimeLinter.lint import Linter, util
 
 
 class Phpcs(Linter):
-    """Provides an interface to phpcs."""
-
     syntax = ('php', 'html', 'html 5')
-    regex = (
-        r'.*line="(?P<line>\d+)" '
-        r'column="(?P<col>\d+)" '
-        r'severity="(?:(?P<error>error)|(?P<warning>warning))" '
-        r'message="(?P<message>.*)" source'
-    )
-    executable = 'phpcs'
+    cmd = ('phpcs', '--report=emacs', '${args}', '-')
+    regex = r'^.*:(?P<line>[0-9]+):(?P<col>[0-9]+): (?:(?P<error>error)|(?P<warning>warning)) - (?P<message>.+)'
     defaults = {
+        # we want auto-substitution of the filename, but `cmd` does not support that yet
+        '--stdin-path=': '${file}',
         '--standard=': 'PSR2',
     }
+
     inline_overrides = ('standard')
     tempfile_suffix = 'php'
     error_stream = util.STREAM_STDOUT
-
-    def cmd(self):
-        """Read cmd from inline settings."""
-        settings = Linter.get_view_settings(self)
-
-        if 'cmd' in settings:
-            command = [settings.get('cmd')]
-        else:
-            command = [self.executable_path]
-
-        command.append('--report=checkstyle')
-
-        return command
