@@ -1,10 +1,3 @@
-#
-# linter.py
-# Linter for SublimeLinter3, a code checking framework for Sublime Text 3
-#
-# License: MIT
-#
-
 from SublimeLinter.lint import ComposerLinter, util
 
 
