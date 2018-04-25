@@ -1,4 +1,4 @@
-from SublimeLinter.lint import ComposerLinter, util
+from SublimeLinter.lint import ComposerLinter
 
 
 class Phpcs(ComposerLinter):
@@ -11,4 +11,3 @@ class Phpcs(ComposerLinter):
         '--stdin-path=': '${file}',
         '--standard=': 'PSR2',
     }
-    error_stream = util.STREAM_STDOUT
