@@ -8,6 +8,5 @@ class Phpcs(ComposerLinter):
     defaults = {
         'selector': 'source.php, text.html.basic',
         # we want auto-substitution of the filename, but `cmd` does not support that yet
-        '--stdin-path=': '${file}',
-        '--standard=': 'PSR2',
+        '--stdin-path=': '${file}'
     }
