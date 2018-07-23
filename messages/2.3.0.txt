@@ -1,0 +1,6 @@
+SublimeLinter-phpcs 2.3.0
+-------------------------------
+
+Starting with this release, we no longer set the standard by default.
+Previously the standard was set to PSR2, you can set this now using "args":
+http://www.sublimelinter.com/en/stable/linter_settings.html#args
