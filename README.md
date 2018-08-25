@@ -27,7 +27,7 @@ You can set up your project settings to use a specific standard using the follow
 ```json
 {
     "settings": {
-        "SublimeLinter.linters.phpcs.args": "--standard=${folder}/phpcs.xml"
+        "SublimeLinter.linters.phpcs.args": "--standard='${folder}/phpcs.xml'"
     }
 }
 ```
