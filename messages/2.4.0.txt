@@ -1,0 +1,5 @@
+SublimeLinter-phpcs 2.4.0
+-------------------------------
+
+Quick actions (to ignore specific error codes) can now be enabled by
+adding the `-s` argument. This adds error codes to the output.
