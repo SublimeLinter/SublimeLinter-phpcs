@@ -21,13 +21,12 @@ Before using this plugin, ensure that `phpcs` is installed on your system, prefe
 - SublimeLinter settings: http://sublimelinter.com/en/latest/settings.html
 - Linter settings: http://sublimelinter.com/en/latest/linter_settings.html
 
-Use the `"args"` setting to configure the coding standard, and/or to display the sniff codes for each error:
+Use the `"args"` setting to configure the coding standard, if you've not done so via [configuration file](https://github.com/PHPCSStandards/PHP_CodeSniffer/wiki/Annotated-Ruleset). 
 
 ```json
 {
     "args": [
         "--standard=PEAR", // code standard
-        "-s"               // display sniff codes
     ]
 }
 ```
