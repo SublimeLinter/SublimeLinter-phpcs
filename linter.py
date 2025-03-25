@@ -1,10 +1,9 @@
-import csv
-from io import StringIO
+import json
 from SublimeLinter.lint import LintMatch, ComposerLinter
 
 
 class Phpcs(ComposerLinter):
-    cmd = ('phpcs', '--report=csv', '${args}', '-')
+    cmd = ('phpcs', '--report=json', '${args}', '-')
     defaults = {
         'selector': 'embedding.php, source.php  - text.blade',
         # we want auto-substitution of the filename,
@@ -13,11 +12,14 @@ class Phpcs(ComposerLinter):
     }
 
     def find_errors(self, output):
-        for match in csv.DictReader(StringIO(output)):
-            yield LintMatch(
-                line=int(match.get('Line', 1)) - 1,
-                col=int(match.get('Column', 1)) - 1,
-                error_type=match.get('Type', 'warning'),
-                code=match.get('Source', ''),
-                message=match.get('Message', ''),
-            )
+        data = json.loads(output)
+        for file_path, file_data in data["files"].items():
+            for error in file_data['messages']:
+                yield LintMatch(
+                    filename=file_path,
+                    line=error['line'] - 1,
+                    col=error['column'] - 1,
+                    error_type=error['type'].lower(),
+                    code=error['source'],
+                    message=error['message'],
+                )
