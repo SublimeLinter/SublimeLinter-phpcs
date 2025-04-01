@@ -7,7 +7,8 @@ class Phpcs(ComposerLinter):
         'selector': 'embedding.php, source.php  - text.blade',
         # we want auto-substitution of the filename,
         # but `cmd` does not support that yet
-        '--stdin-path=': '${file}'
+        '--stdin-path=': '${file}',
+        "--tab-width": True
     }
     tab_size = 4
 
@@ -26,9 +27,15 @@ class Phpcs(ComposerLinter):
                 )
 
     def cmd(self):
-        if self.view.settings().get("indentation") == 'tabs':
+        tabs2spaces = self.settings.get("--tab-width")
+        if tabs2spaces is True:
+            # autodetect
             tab_width = self.view.settings().get("tab_size", 4)
             return ('phpcs', '--report=json', '--tab-width={}'.format(tab_width), '${args}', '-')
+
+        if tabs2spaces is not False:
+            # pass the specific arg
+            return ('phpcs', '--report=json', '--tab-width={}'.format(tabs2spaces), '${args}', '-')
 
         return ('phpcs', '--report=json', '${args}', '-')
 
