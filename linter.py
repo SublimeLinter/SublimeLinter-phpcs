@@ -3,15 +3,17 @@ from SublimeLinter.lint import LintMatch, ComposerLinter
 
 
 class Phpcs(ComposerLinter):
-    cmd = ('phpcs', '--report=json', '${args}', '-')
     defaults = {
         'selector': 'embedding.php, source.php  - text.blade',
         # we want auto-substitution of the filename,
         # but `cmd` does not support that yet
-        '--stdin-path=': '${file}'
+        '--stdin-path=': '${file}',
+        "--tab-width": True
     }
+    tab_size = 4
 
     def find_errors(self, output):
+        self.tab_size = self.view.settings().get("tab_size", 4)
         data = json.loads(output)
         for file_path, file_data in data["files"].items():
             for error in file_data['messages']:
@@ -23,3 +25,22 @@ class Phpcs(ComposerLinter):
                     code=error['source'],
                     message=error['message'],
                 )
+
+    def cmd(self):
+        tabs2spaces = self.settings.get("--tab-width")
+        if tabs2spaces is True:
+            # autodetect
+            tab_width = self.view.settings().get("tab_size", 4)
+            return ('phpcs', '--report=json', '--tab-width={}'.format(tab_width), '${args}', '-')
+
+        if tabs2spaces is not False:
+            # pass the specific arg
+            return ('phpcs', '--report=json', '--tab-width={}'.format(tabs2spaces), '${args}', '-')
+
+        return ('phpcs', '--report=json', '${args}', '-')
+
+    def reposition_match(self, line, col, m, vv):
+        line_contents = vv.select_line(line)
+        tabs_to_spaces = line_contents[:col].count("\t") * (self.tab_size - 1)
+        new_col = max(0, col - tabs_to_spaces)
+        return super().reposition_match(line, new_col, m, vv)
