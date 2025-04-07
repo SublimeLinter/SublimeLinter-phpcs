@@ -23,14 +23,11 @@ Before using this plugin, ensure that `phpcs` is installed on your system, prefe
 
 Use the `"args"` setting to configure the coding standard, if you've not done so via [configuration file](https://github.com/PHPCSStandards/PHP_CodeSniffer/wiki/Annotated-Ruleset). 
 
-The `--tab-width`, setting controls whether phpcs converts tabs to spaces automatically based on the view (default: `true`), or specifically (e.g. `4`), or not at all (`false`).
-
 ```json
 {
     "args": [
         "--standard=PEAR", // code standard
     ]
-    "--tab-width": true/false/a number
 }
 ```
 
