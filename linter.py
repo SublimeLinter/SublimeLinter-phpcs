@@ -3,6 +3,7 @@ from SublimeLinter.lint import LintMatch, ComposerLinter
 
 
 class Phpcs(ComposerLinter):
+    cmd = ('phpcs', '--report=json', '${args}', '-')
     defaults = {
         'selector': 'embedding.php, source.php  - text.blade',
         # we want auto-substitution of the filename,
@@ -24,13 +25,6 @@ class Phpcs(ComposerLinter):
                     code=error['source'],
                     message=error['message'],
                 )
-
-    def cmd(self):
-        if self.view.settings().get("indentation") == 'tabs':
-            tab_width = self.view.settings().get("tab_size", 4)
-            return ('phpcs', '--report=json', '--tab-width={}'.format(tab_width), '${args}', '-')
-
-        return ('phpcs', '--report=json', '${args}', '-')
 
     def reposition_match(self, line, col, m, vv):
         line_contents = vv.select_line(line)
