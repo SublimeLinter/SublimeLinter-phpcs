@@ -1,8 +1,8 @@
 import json
-from SublimeLinter.lint import LintMatch, ComposerLinter
+from SublimeLinter.lint import LintMatch, PhpLinter
 
 
-class Phpcs(ComposerLinter):
+class Phpcs(PhpLinter):
     cmd = ('phpcs', '--report=json', '${args}', '-')
     defaults = {
         'selector': 'embedding.php, source.php  - text.blade',
