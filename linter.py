@@ -3,7 +3,7 @@ from SublimeLinter.lint import LintMatch, PhpLinter
 
 
 class Phpcs(PhpLinter):
-    cmd = ('phpcs', '--report=json', '${args}', '-')
+    cmd = ('phpcs', '-q', '--report=json', '${args}', '-')
     defaults = {
         'selector': 'embedding.php, source.php  - text.blade',
         # we want auto-substitution of the filename,
