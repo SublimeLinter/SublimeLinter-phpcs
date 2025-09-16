@@ -16,7 +16,6 @@ class Phpcs(PhpLinter):
         for file_path, file_data in data["files"].items():
             for error in file_data['messages']:
                 yield LintMatch(
-                    filename=file_path,
                     line=error['line'] - 1,
                     col=error['column'] - 1,
                     error_type=error['type'].lower(),
