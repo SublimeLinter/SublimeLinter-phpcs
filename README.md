@@ -39,10 +39,3 @@ You can set up your project settings to use a specific standard using the follow
     }
 }
 ```
-
-### Sublime project path
-Make sure to open the project using the absolute path to your files. `phpcs` will report the absolute path back,
-and you will see no results when that path differs from the path Sublime sends in.
-
-If for example your files live in /usr/local/share/projects/Gandalf, and you made a symlink in your home directory
-Gandalf pointing to this location, you'd be inclined to open the project from ~/Gandalf. Don't.
