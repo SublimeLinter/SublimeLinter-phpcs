@@ -1,7 +1,7 @@
 SublimeLinter-phpcs
 =========================
 
-This linter plugin for [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter) provides an interface to [phpcs](https://github.com/squizlabs/PHP_CodeSniffer).
+This linter plugin for [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter) provides an interface to [phpcs](https://github.com/PHPCSStandards/PHP_CodeSniffer).
 It will be used with files that have the "PHP", "HTML" and "HTML5" syntax.
 
 
@@ -11,7 +11,7 @@ SublimeLinter must be installed in order to use this plugin.
 
 Please use [Package Control](https://packagecontrol.io) to install the linter plugin.
 
-Before using this plugin, ensure that `phpcs` is installed on your system, preferably somewhere in your PATH. To install `phpcs`, follow the instructions on https://github.com/squizlabs/PHP_CodeSniffer#installation. 
+Before using this plugin, ensure that `phpcs` is installed on your system, preferably somewhere in your PATH. To install `phpcs`, follow the instructions on https://github.com/PHPCSStandards/PHP_CodeSniffer#installation. 
 
 
 ## Settings
